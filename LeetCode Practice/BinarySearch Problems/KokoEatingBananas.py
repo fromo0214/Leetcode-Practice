@@ -50,3 +50,26 @@ piles = [3,6,7,11]
 h = 8
 print(minEatingBananas(piles,h))
 
+
+
+
+def kokoeatingbananas(piles, h):
+
+    l, r = 1, max(piles)
+
+    res = r
+    while l <= r:
+        hrs = 0
+        k = (l + r) // 2
+        for pile in piles:
+            hrs += math.ceil(piles / k)
+
+        if hrs > h:
+            l = k + 1
+
+        else:
+            res = k
+            r = k - 1
+
+    
+    return res

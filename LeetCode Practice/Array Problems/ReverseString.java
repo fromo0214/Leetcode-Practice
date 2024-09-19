@@ -9,8 +9,8 @@ public class ReverseString {
         s[pointer1] = s[pointer2];
         s[pointer2] = tmp;
 
-        pointer1++;
-        pointer2--;
+        pointer1 += 1;
+        pointer2-= 1;
 
        }
        System.out.println(s);
