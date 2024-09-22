@@ -1,6 +1,6 @@
 # https://leetcode.com/problems/search-a-2d-matrix/
 
-# Time Complexity O(m * n)
+# Time Complexity O(m * n) Not the most optimal solution
 def searchMatrix(matrix, target):
     if not matrix:
         return False

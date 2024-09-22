@@ -62,7 +62,7 @@ def kokoeatingbananas(piles, h):
         hrs = 0
         k = (l + r) // 2
         for pile in piles:
-            hrs += math.ceil(piles / k)
+            hrs += math.ceil(pile / k)
 
         if hrs > h:
             l = k + 1
