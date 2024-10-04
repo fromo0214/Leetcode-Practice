@@ -2,9 +2,6 @@
 # https://www.youtube.com/watch?v=YPTqKIgVk-k&ab_channel=NeetCode
 
 #Time O(n)
-from collections import defaultdict
-
-
 def topKFrequentElements(nums, k):
 
     count = {}
@@ -13,9 +10,7 @@ def topKFrequentElements(nums, k):
     for n in nums:
         # here we add the frequency using the key method, if it does not exist in the map
         # then add a default value of 0
-        if n in count:
-            count[n] += 1
-        count[n] = 1
+        count[n] = count.get(n, 0) + 1
 
     # count is index 
     for num, countt in count.items():

@@ -1,28 +1,42 @@
 def isValidBST(root):
+
     if not root:
         return True
-    def dfs(root):
+    # left and right variables define boundaries
+
+    def valid(node, left, right):
+
         if not root:
             return True
-        val = root.val
-        if root.left:
-            left_val = root.left.val
-        else:
-            left_val = 0
-        if root.right:
-            right_val = root.right.val
-        else:
-            right_val = 0
+       
+        if not node.val < right and node.val > left:
+            return False
         
-        if left_val < val and right_val > val:
+        return valid((node.left, left, node.val) and valid(node.right, node.val, right))
+    
+    return valid(root, float("-inf"), float("inf"))
+          
+
+
+
+def validBST(root):
+    if not root:
+        return True
+
+    def validate(node, left, right):
+        if not node:
             return True
         
-        return dfs(root)
-            
+        if node.val <= left or node.val >= right:
+            return False
         
-    return isValidBST(root.left) and isValidBST(root.right)
+
+        return validate(node.left, left, node.val) and validate(node.right, node.val, right)
+
+
+        
 
 
        
-        
+    return validate(root, float("-inf"), float("inf"))
         
