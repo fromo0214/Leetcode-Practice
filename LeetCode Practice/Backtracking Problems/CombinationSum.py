@@ -16,17 +16,17 @@ def combinationSum(nums, target):
         
         curr.append(nums[i])
          # Here we leave the index the same since we are allowed
-            # to reuse elements unlimited times
-        dfs(i, curr, total + nums[i])
-
+        # to reuse elements unlimited times
+        dfs(i+1, curr, total + nums[i])
+        
         curr.pop()
         # next decision is where we cant include this candidate,
         # clean up a little bit
-        dfs(i + 1, curr, total)
+        # dfs(i+ 1, curr, total)
 
 
     dfs(0, [], 0)
     return res
 
-print(combinationSum([1,2,3], 3))
+print(combinationSum([10,1,2,7,6,1,5], 8))
 
